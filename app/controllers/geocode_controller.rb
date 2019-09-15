@@ -1,6 +1,5 @@
 class GeocodeController < ApplicationController
   def index
-    # binding. pry
-    render json: CoordinatesSerializer.new(GeocodingService.fetch_lat_and_long('Denver', 'Colorado'))
+    render json: CoordinatesSerializer.new(GeocodingService.fetch_lat_and_long(*params[:location].split(',')))
   end
 end
