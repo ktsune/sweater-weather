@@ -5,6 +5,8 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
         null
       ],
@@ -12,50 +14,81 @@
         1,
         null
       ],
-      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/mailers/application_mailer.rb": [
-        0,
-        0,
-        0,
-        0
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/services/geocoding_service.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
       ],
       "/Users/sarahlee/turing/3module/projects/sweater-weather/app/models/coordinates.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
       ],
       "/Users/sarahlee/turing/3module/projects/sweater-weather/app/models/weather.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
         null,
-        0,
-        0,
         null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         null,
-        0,
         null,
-        0,
-        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/services/dark_sky_service.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
@@ -122,6 +155,7 @@
         0,
         0,
         0,
+        0,
         0
       ],
       "/Users/sarahlee/turing/3module/projects/sweater-weather/app/controllers/weather_controller.rb": [
@@ -131,28 +165,6 @@
         0
       ],
       "/Users/sarahlee/turing/3module/projects/sweater-weather/app/helpers/application_helper.rb": [
-        0,
-        0
-      ],
-      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/services/geocoding_service.rb": [
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
         0,
         0
       ],
@@ -189,15 +201,6 @@
         0,
         0
       ],
-      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/services/dark_sky_service.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/sarahlee/turing/3module/projects/sweater-weather/app/channels/application_cable/connection.rb": [
         0,
         0,
@@ -211,6 +214,6 @@
         0
       ]
     },
-    "timestamp": 1568647714
+    "timestamp": 1568649309
   }
 }

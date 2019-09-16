@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Giphy API' do
   it 'retreives giphy based on daily summary' do
 
-    get "/api/v1/gifs"
+    get "/api/v1/gifs?location=Denver,CO"
 
     expect(response).to be_successful
 

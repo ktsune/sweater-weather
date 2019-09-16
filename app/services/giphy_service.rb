@@ -10,15 +10,15 @@ class GiphyService
   #   JSON.parse(parse_request.body, symbolize_names: true)
   # end
 
-  def initialize(city)
+  def initialize
     @conn = Faraday.new(url: "http://api.giphy.com") do |f|
       f.adapter  Faraday.default_adapter
       f.headers['api_key'] = ENV['GIPHY']
     end
   end
 
-  def fetch_gif(city)
-    fetch("/v1/gifs/random")
+  def fetch_gif(daily_weather_summary)
+    fetch("/v1/gifs/search?q=#{daily_weather_summary}")
   end
 
   private
