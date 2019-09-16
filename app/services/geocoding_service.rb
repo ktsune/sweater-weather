@@ -1,7 +1,7 @@
 class GeocodingService
 
   def self.fetch_lat_and_long(city, state)
-    parsed_json = fetch("/maps/api/geocode/json?address=#{city},#{state}&key=AIzaSyD7V2YmCNJGwmxjEOenvU95bLXky4iEwos")
+    parsed_json = fetch("/maps/api/geocode/json?address=#{city},#{state}&key=#{ENV['GOOGLE']}")
 
     # => response[:results][0][:geometry][:location][:lat][:lng]
 

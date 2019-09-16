@@ -1,0 +1,216 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/controllers/gif_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/models/coordinates.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/models/weather.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/models/application_record.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/serializers/coordinates_serializer.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/serializers/giphy_serializer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/facades/dark_sky_facade.rb": [
+        0,
+        null,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/facades/giphy_facade.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/facades/geocoding_facade.rb": [
+        0,
+        null,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/controllers/forecast_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/controllers/weather_controller.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/helpers/application_helper.rb": [
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/services/geocoding_service.rb": [
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/services/giphy_service.rb": [
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/services/dark_sky_service.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/sarahlee/turing/3module/projects/sweater-weather/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1568647714
+  }
+}
