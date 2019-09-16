@@ -1,4 +1,4 @@
-class GiphySerializer
+class GiphyDarkSkySerializer
   include FastJsonapi::ObjectSerializer
-  attributes :id, :image
+  attributes :id, :summary, :time, :url, :copyright
 end
