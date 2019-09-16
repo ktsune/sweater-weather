@@ -10,7 +10,8 @@ class Weather
               :hourly_precip,
               :hourly_time,
               :hourly_temp,
-              :hourly_summary
+              :hourly_summary,
+              :daily_weather_summary
 
   def initialize(weather)
     @timezone = weather[:timezone]
@@ -24,10 +25,16 @@ class Weather
 
     @feels_like = weather[:currently][:apparentTemperature]
 
-    @daily_weather_summary = weather[:daily][:summary]
+    @daily_weather_summary = summary(weather)
     @hourly_precip = weather[:hourly][:precipProbability]
     @hourly_time = weather[:hourly][:time]
     @hourly_temp = weather[:hourly][:temperature]
     @hourly_summary = weather[:hourly][:summary]
+  end
+
+  def summary(weather)
+    weather[:daily][:data].map do |data|
+      data.summary
+    end
   end
 end
