@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe GeocodingService do
   scenario 'get city and state' do
-    # service = GeocodingService.new
     response = GeocodingService.fetch_lat_and_long('denver', 'CO')
 
     expect(response).to be_a(Coordinates)

@@ -1,11 +1,22 @@
 class Weather
-  attr_reader :temp
+  attr_reader :timezone,
+              :current_temp,
+              :current_summary,
+              :current_time,
+              :current_humidity,
+              :current_uv,
+              :current_visibility,
+              :feels_like,
+              :hourly_precip,
+              :hourly_time,
+              :hourly_temp,
+              :hourly_summary
 
   def initialize(weather)
     @timezone = weather[:timezone]
 
     @current_temp = weather[:currently][:temperature]
-    @current_temp = weather[:currently][:summary]
+    @current_summary = weather[:currently][:summary]
     @current_time = weather[:currently][:time]
     @current_humidity = weather[:currently][:humidity]
     @current_uv = weather[:currently][:uvIndex]
