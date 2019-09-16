@@ -1,7 +1,7 @@
 class Coordinates
   attr_accessor :lat, :long
   def initialize(coordinates)
-    @lat = coordinates.last
-    @long = coordinates.last
+    @lat = coordinates[:lat]
+    @long = coordinates[:lng]
   end
 end
