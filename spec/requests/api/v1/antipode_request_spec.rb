@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Antipode API' do
   it 'retreives antipode' do
 
-    get "/api/v1/antipode?location=HongKong, China"
+    get "/api/v1/antipode?location=HongKong"
 
     expect(response).to be_successful
 

@@ -10,6 +10,7 @@ class AntipodeService
 
     response = connection.get("/api/v1/antipodes?lat=#{lat}&long=#{long}")
     parsed = JSON.parse(response.body, symbolize_names: true)
-    parsed[:data][:attributes]
+
+    Coordinates.new(parsed[:data][:attributes])
   end
 end
