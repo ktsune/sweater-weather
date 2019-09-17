@@ -8,7 +8,6 @@
         1,
         1,
         0,
-        0,
         null,
         null,
         null
@@ -111,16 +110,16 @@
       "/Users/sarahlee/turing/3module/projects/sweater-weather/app/services/antipode_service.rb": [
         1,
         1,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         null,
         null,
         null,
         1,
         null,
-        0,
-        0,
+        1,
+        1,
         null,
         null
       ],
@@ -312,6 +311,6 @@
         0
       ]
     },
-    "timestamp": 1568735009
+    "timestamp": 1568735187
   }
 }
