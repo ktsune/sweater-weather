@@ -1,17 +1,40 @@
 require 'rails_helper'
 
-describe 'user creates account with email and password' do
-  it 'receives api key' do
-    email = 'sam@gmail.com'
-    password = 'test'
+describe 'user account' do
+  it 'user creates account and receives api key' do
+    bob = User.create!(email: 'bob@bobtown.com', password: 'bobness', password_confirmation: 'bobness')
+    sam = User.create!(email: 'sam@samtown.com', password: 'samness', password_confirmation: 'samness')
 
-    get "/api/v1/users"
+    @params = {
+      "email": "whatever@example.com",
+      "password": "password",
+      "password_confirmation": "password"
+    }
+
+    post "/api/v1/users", params: @params
 
     expect(response).to be_successful
 
     parsed = JSON.parse(response.body, symbolize_names: true)
 
     expect(parsed).to be_a(Hash)
-    expect(parsed[:api_key]).to eq("jgn983hy48thw9begh98h4539h4")
+  end
+
+  it 'user logs in and receives api key' do
+    email = 'sam@gmail.com'
+    password = 'test'
+
+    @params = {
+      "email": "whatever@example.com",
+      "password": "password"
+    }
+
+    post "/api/v1/sessions", params: @params
+
+    expect(response).to be_successful
+
+    parsed = JSON.parse(response.body, symbolize_names: true)
+
+    expect(parsed).to be_a(Hash)
   end
 end
