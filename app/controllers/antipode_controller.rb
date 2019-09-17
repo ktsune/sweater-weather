@@ -1,10 +1,10 @@
 class AntipodeController < ApplicationController
   def index
-    coords = GeocodingService.fetch_lat_and_long(*params[:location].split(','))
+    city_coords = GeocodingService.fetch_lat_and_long(*params[:location].split(','))
     # @weather = Weather.new(DarkSkyService.fetch_weather_data(coords.lat, coords.long))
-    antipode = AntipodeService.fetch_antipode(coords.lat, coords.long)
-    # binding.pry
-    # GeocodingService.fetch_lat_and_long
+    antipode_coords = AntipodeService.fetch_antipode(city_coords.lat, city_coords.long)
+
+    antipode_city_name = GeocodingService.reverse_geocode(antipode_coords.lat, antipode_coords.long)
     # render json: GiphyDarkSkySerializer.new(GiphyDarkSky.new(@weather))
   end
 end
