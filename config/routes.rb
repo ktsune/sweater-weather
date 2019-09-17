@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'weather#index'
   get '/api/v1/forecast', to: 'forecast#index'
   get '/api/v1/background', to: 'background#index'
+  get '/api/v1/users', to: 'user#create'
 end
