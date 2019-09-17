@@ -8,7 +8,8 @@ class AntipodeService
 
   def self.fetch_antipode(lat, long)
 
-    response = connection.get("/api/v1/antipodes?#{lat}&#{long}")
-    JSON.parse(response.body, symbolize_names: true)
+    response = connection.get("/api/v1/antipodes?lat=#{lat}&long=#{long}")
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    parsed[:data][:attributes]
   end
 end
