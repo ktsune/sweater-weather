@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'weather#index'
   get '/api/v1/forecast', to: 'forecast#index'
   get '/api/v1/gifs', to: 'gif#index'
+  get '/api/v1/antipode', to: 'antipode#index'
 end
