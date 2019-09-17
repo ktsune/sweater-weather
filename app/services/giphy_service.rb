@@ -17,7 +17,7 @@ class GiphyService
   end
 
   def self.fetch_gif(daily_weather_summary)
-    binding.pry
+
     response = connection.get("/v1/gifs/search?q=#{daily_weather_summary}")
     JSON.parse(response.body, symbolize_names: true)
   end

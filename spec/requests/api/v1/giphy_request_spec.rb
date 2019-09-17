@@ -8,8 +8,8 @@ describe 'Giphy API' do
     expect(response).to be_successful
 
     parsed = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
+
     expect(parsed).to be_a(Hash)
-    expect(parsed[:images]).to be_an(Array)
+    expect(parsed[:data][:images]).to be_an(Array)
   end
 end
