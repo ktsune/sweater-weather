@@ -7,26 +7,28 @@ class Weather
               :current_uv,
               :current_visibility,
               :feels_like,
-              :hourly_precip,
-              :hourly_time,
-              :hourly_temp,
-              :hourly_summary
+              :hourly_data
 
   def initialize(weather)
+    @hourly_data = hourly_weather(weather[:hourly][:data])
     @timezone = weather[:timezone]
-
     @current_temp = weather[:currently][:temperature]
     @current_summary = weather[:currently][:summary]
     @current_time = weather[:currently][:time]
     @current_humidity = weather[:currently][:humidity]
     @current_uv = weather[:currently][:uvIndex]
     @current_visibility = weather[:currently][:visibility]
-
     @feels_like = weather[:currently][:apparentTemperature]
+  end
 
-    @hourly_precip = weather[:hourly][:precipProbability]
-    @hourly_time = weather[:hourly][:time]
-    @hourly_temp = weather[:hourly][:temperature]
-    @hourly_summary = weather[:hourly][:summary]
+  def hourly_weather(data)
+    data.take(5).map do |hourly_data|
+      {
+        time: hourly_data[:time],
+        temperature: hourly_data[:temperature],
+        summary: hourly_data[:summary],
+        precipProbability: hourly_data[:precipProbability]
+      }
+    end
   end
 end
