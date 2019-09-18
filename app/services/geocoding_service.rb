@@ -14,6 +14,3 @@ class GeocodingService
     JSON.parse(parse_request.body, symbolize_names: true)
   end
 end
-# => vcr path filename do
-
-# => end

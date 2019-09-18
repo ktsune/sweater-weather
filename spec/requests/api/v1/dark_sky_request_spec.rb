@@ -2,14 +2,15 @@ require 'rails_helper'
 
 describe 'Dark Sky API' do
   it 'pass in city and state, get gif' do
+    VCR.use_cassette('returns_weather', record: :new_episodes) do
+      get "/api/v1/forecast?location=Denver,CO"
 
-    get "/api/v1/forecast?location=Denver,CO"
+      expect(response).to be_successful
+      expect(response.status).to eq 200
 
-    expect(response).to be_successful
-    expect(response.status).to eq 200
+      parsed = JSON.parse(response.body, symbolize_names: true)
 
-    parsed = JSON.parse(response.body, symbolize_names: true)
-
-    expect(parsed).to be_a(Hash)
+      expect(parsed).to be_a(Hash)
+    end 
   end
 end
