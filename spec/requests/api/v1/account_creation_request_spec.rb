@@ -1,40 +1,55 @@
 require 'rails_helper'
 
-describe 'user account' do
-  it 'user creates account and receives api key' do
-    bob = User.create!(email: 'bob@bobtown.com', password: 'bobness', password_confirmation: 'bobness')
-    sam = User.create!(email: 'sam@samtown.com', password: 'samness', password_confirmation: 'samness')
-
+describe 'user account creation' do
+  before :each do
     @params = {
+      "email": "whatever@example.com",
+      "password": "password",
+      "password_confirmation": "pass"
+    }
+  end
+
+  it 'user creates account and receives api key' do
+    post "/api/v1/users", params: @params
+
+    expect(response.status).to eq 201
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed).to be_a(Hash)
+  end
+
+  it 'user password and confirmation password do not match' do
+    params = {
+      "email": "whatever@example.com",
+      "password": "password",
+      "password_confirmation": "pass"
+    }
+    post "/api/v1/users", params: params
+
+    expect(response.status).to eq 400
+  end
+
+  it 'email cannot be blank' do
+    @params['email'] = ''
+    post "/api/v1/users", params: @params
+
+    expect(response.status).to eq 400
+  end
+
+  it 'user email is already taken' do
+    params = {
       "email": "whatever@example.com",
       "password": "password",
       "password_confirmation": "password"
     }
+    post "/api/v1/users", params: params
 
-    post "/api/v1/users", params: @params
-
-    expect(response).to be_successful
-
-    parsed = JSON.parse(response.body, symbolize_names: true)
-
-    expect(parsed).to be_a(Hash)
-  end
-
-  it 'user logs in and receives api key' do
-    email = 'sam@gmail.com'
-    password = 'test'
-
-    @params = {
+    params2 = {
       "email": "whatever@example.com",
-      "password": "password"
+      "password": "word",
+      "password_confirmation": "word"
     }
+    post "/api/v1/users", params: params
 
-    post "/api/v1/sessions", params: @params
-
-    expect(response).to be_successful
-
-    parsed = JSON.parse(response.body, symbolize_names: true)
-
-    expect(parsed).to be_a(Hash)
+    expect(response.status).to eq 400
   end
 end
