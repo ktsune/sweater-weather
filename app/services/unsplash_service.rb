@@ -6,7 +6,7 @@ class UnsplashService
     end
   end
 
-  def self.fetch_gif(city, state)
+  def self.fetch_image(city, state)
     response = connection.get("/photos/random?query=#{city},#{state}")
     JSON.parse(response.body, symbolize_names: true)
   end
