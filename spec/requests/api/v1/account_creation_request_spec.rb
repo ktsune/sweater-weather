@@ -44,11 +44,23 @@ describe 'user account creation' do
     }
     post "/api/v1/users", params: params
 
-    params2 = {
+    params1 = {
       "email": "susan@example.com",
       "password": "word",
       "password_confirmation": "word"
     }
+    post "/api/v1/users", params: params
+
+    expect(response.status).to eq 400
+  end
+
+  it 'errors out if the correct info is not entered' do
+    params = {
+      "email": " ",
+      "password": " ",
+      "password_confirmation": "word"
+    }
+
     post "/api/v1/users", params: params
 
     expect(response.status).to eq 400

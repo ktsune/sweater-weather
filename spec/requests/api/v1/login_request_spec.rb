@@ -17,4 +17,24 @@ describe 'user account creation' do
     parsed = JSON.parse(response.body, symbolize_names: true)
     expect(parsed).to be_a(Hash)
   end
+
+  it 'email cannot be blank' do
+    params = {
+      "email": " ",
+      "password": "password",
+    }
+    post "/api/v1/users", params: params
+
+    expect(response.status).to eq 400
+  end
+
+  it 'password cannot be blank' do
+    params = {
+      "email": "whitney@gmail.com",
+      "password": " ",
+    }
+    post "/api/v1/users", params: params
+
+    expect(response.status).to eq 400
+  end
 end
