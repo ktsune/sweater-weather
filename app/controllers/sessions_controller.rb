@@ -3,8 +3,9 @@ class SessionsController < ApplicationController
     return not_authorized_error if !params[:email]
 
     user = User.find_by(email: params[:email])
+    # binding.pry
     if user && user.authenticate(params[:password])
-      render status: :OK, json: { api_key: user.api_key }
+      render json: { api_key: user.api_key }
     else
       not_authorized_error
     end
