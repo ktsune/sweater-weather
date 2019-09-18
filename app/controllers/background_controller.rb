@@ -1,5 +1,6 @@
 class BackgroundController < ApplicationController
   def index
-    render json: UnsplashSerializer.new(Unsplash.new(*params[:location].split(',')))
+    background_facade = BackgroundFacade.new(*params[:location].split(','))
+    render json: UnsplashSerializer.new(background_facade)
   end
 end

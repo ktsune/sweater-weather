@@ -6,11 +6,10 @@ describe 'Dark Sky API' do
     get "/api/v1/forecast?location=Denver,CO"
 
     expect(response).to be_successful
+    expect(response.status).to eq 200
 
     parsed = JSON.parse(response.body, symbolize_names: true)
 
     expect(parsed).to be_a(Hash)
-    # expect(parsed[:current]).to be_a(Hash)
-    # binding.pry
   end
 end

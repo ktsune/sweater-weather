@@ -1,16 +1,13 @@
 require 'rails_helper'
 
 describe 'user account creation' do
-  before :each do
-    @params = {
-      "email": "whatever@example.com",
-      "password": "password",
-      "password_confirmation": "pass"
-    }
-  end
-
   it 'user creates account and receives api key' do
-    post "/api/v1/users", params: @params
+    params = {
+      "email": "bob@example.com",
+      "password": "password",
+      "password_confirmation": "password"
+    }
+    post "/api/v1/users", params: params
 
     expect(response.status).to eq 201
     parsed = JSON.parse(response.body, symbolize_names: true)
@@ -29,25 +26,41 @@ describe 'user account creation' do
   end
 
   it 'email cannot be blank' do
-    @params['email'] = ''
-    post "/api/v1/users", params: @params
+    params = {
+      "email": " ",
+      "password": "password",
+      "password_confirmation": "pass"
+    }
+    post "/api/v1/users", params: params
 
     expect(response.status).to eq 400
   end
 
   it 'user email is already taken' do
     params = {
-      "email": "whatever@example.com",
+      "email": "susan@example.com",
       "password": "password",
       "password_confirmation": "password"
     }
     post "/api/v1/users", params: params
 
-    params2 = {
-      "email": "whatever@example.com",
+    params1 = {
+      "email": "susan@example.com",
       "password": "word",
       "password_confirmation": "word"
     }
+    post "/api/v1/users", params: params
+
+    expect(response.status).to eq 400
+  end
+
+  it 'errors out if the correct info is not entered' do
+    params = {
+      "email": " ",
+      "password": " ",
+      "password_confirmation": "word"
+    }
+
     post "/api/v1/users", params: params
 
     expect(response.status).to eq 400
