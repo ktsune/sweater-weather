@@ -9,6 +9,7 @@ describe 'user account creation' do
     }
     post "/api/v1/users", params: params
 
+    expect(response).to be_successful
     expect(response.status).to eq 201
     parsed = JSON.parse(response.body, symbolize_names: true)
     expect(parsed).to be_a(Hash)
@@ -22,6 +23,7 @@ describe 'user account creation' do
     }
     post "/api/v1/users", params: params
 
+    expect(response).to_not be_successful
     expect(response.status).to eq 400
   end
 
@@ -51,6 +53,7 @@ describe 'user account creation' do
     }
     post "/api/v1/users", params: params
 
+    expect(response).to_not be_successful
     expect(response.status).to eq 400
   end
 
@@ -63,6 +66,7 @@ describe 'user account creation' do
 
     post "/api/v1/users", params: params
 
+    expect(response).to_not be_successful 
     expect(response.status).to eq 400
   end
 end

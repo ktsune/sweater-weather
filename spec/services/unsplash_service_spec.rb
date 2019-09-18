@@ -6,6 +6,8 @@ describe UnsplashService do
       response = UnsplashService.new.fetch_image('denver', 'CO')
 
       expect(response).to be_a(Hash)
-    end
-  end
+      expect(response[:urls][:raw]).to be_a(String)
+      expect(response[:urls].count).to eq(5)
+    end 
+  end 
 end
